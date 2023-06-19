@@ -24,3 +24,12 @@ SELECT * FROM users WHERE NOT(id IN(5, 10));
 
 -- usersテーブルから、emailが「gmail.com」のユーザを選択
 SELECT * FROM users WHERE email LIKE "%gmail.com%";
+
+-- usersテーブルを idで降順（こうじゅん）（Descending）
+SELECT * FROM users ORDER BY id DESC;
+
+-- usersテーブルを emailを昇順（しょうじゅん）（Ascending）
+SELECT * FROM users ORDER BY email ASC;
+
+-- usersテーブルを emailを降順（Descending）
+SELECT * FROM users ORDER BY email DESC;
