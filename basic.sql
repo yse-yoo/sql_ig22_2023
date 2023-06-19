@@ -42,3 +42,24 @@ SELECT * FROM users ORDER BY id DESC LIMIT 10;
 
 -- usersテーブルから、11 - 20 のレコード選択
 SELECT * FROM users LIMIT 10 OFFSET 10;
+
+-- usersテーブルから、51 - 60 のレコード選択
+SELECT * FROM users LIMIT 10 OFFSET 50;
+
+
+-- itemsテーブルにレコードを追加
+INSERT INTO items (code, name, price, stock)
+VALUES ("D00001", "コーヒー", 300, 100);
+
+INSERT INTO items (code, name, price, stock)
+VALUES ("D00002", "紅茶", 350, 100);
+
+INSERT INTO items (code, name, price, stock)
+VALUES ("D00003", "ほうじ茶", 400, 100);
+
+
+
+
+
+
+
