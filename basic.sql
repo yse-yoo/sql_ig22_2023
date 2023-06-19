@@ -33,3 +33,9 @@ SELECT * FROM users ORDER BY email ASC;
 
 -- usersテーブルを emailを降順（Descending）
 SELECT * FROM users ORDER BY email DESC;
+
+-- usersテーブルから、最初の10レコード選択
+SELECT * FROM users LIMIT 10;
+
+-- usersテーブルから、最後からの10レコード選択
+SELECT * FROM users ORDER BY id DESC LIMIT 10;
