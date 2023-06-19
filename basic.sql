@@ -16,3 +16,11 @@ SELECT * FROM users WHERE id >= 5 AND id < 10;
 
 -- usersテーブルから、id = 5 or id = 10 のユーザを選択
 SELECT * FROM users WHERE id = 5 OR id = 10;
+
+SELECT * FROM users WHERE id IN(5, 10);
+
+-- usersテーブルから、id = 5 or id = 10 でないユーザを選択
+SELECT * FROM users WHERE NOT(id IN(5, 10));
+
+-- usersテーブルから、emailが「gmail.com」のユーザを選択
+SELECT * FROM users WHERE email LIKE "%gmail.com%";
