@@ -101,3 +101,30 @@ SUM(price) AS total_price,
 MAX(price) AS max_price,
 MIN(price) AS min_price
 FROM items;
+
+-- itemsテーブルの「price」の税抜き価格（ぜいぬきかかく）
+SELECT price / 1.1 AS price_without_tax FROM items;
+
+-- 税抜き価格の四捨五入（ししゃごにゅう） = round
+SELECT ROUND(price / 1.1) AS price_without_tax FROM items;
+
+SELECT 
+name,
+price,
+ROUND(price / 1.1) AS price_without_tax 
+FROM items;
+
+-- 文字の結合（けつごう）
+SELECT CONCAT(code, name) FROM items;
+
+SELECT CONCAT(code, " : " ,name) AS code_and_name FROM items;
+
+-- 文字を小文字にする
+SELECT LOWER(code) FROM items;
+
+-- itemsテーブルの「code」の先頭（せんとう）文字以外を選択
+SELECT SUBSTRING(code, 2, 5) AS code_number FROM items;
+
+-- code番号をキャスト
+SELECT CAST(SUBSTRING(code, 2, 5) AS SIGNED) AS code_number 
+FROM items;
