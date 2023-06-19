@@ -76,8 +76,28 @@ VALUES ("D00004", "オレンジジュース", 400, 100);
 -- itemsテーブルから「id = D00004」のレコードを削除
 DELETE FROM items WHERE code = "D00004";
 
--- itemsテーブルのレコード数（すう）を取得（しゅとく）
+-- itemsテーブルのレコード数（すう）
 SELECT COUNT(id) AS item_count FROM items;
 
--- usersテーブルのレコード数（すう）を取得（しゅとく）
+-- usersテーブルのレコード数（すう）
 SELECT COUNT(id) AS user_count FROM users;
+
+-- itemsテーブルの「price」の合計値
+SELECT SUM(price) AS total_price FROM items;
+
+-- itemsテーブルの「price」のアベレージ（平均値）
+SELECT AVG(price) AS avarage_price FROM items;
+
+-- itemsテーブルの「price」の最大値（max）、最小値(min)
+SELECT 
+MAX(price) AS max_price,
+MIN(price) AS min_price
+FROM items;
+
+-- まとめて処理
+SELECT 
+COUNT(id) AS item_count,
+SUM(price) AS total_price,
+MAX(price) AS max_price,
+MIN(price) AS min_price
+FROM items;
