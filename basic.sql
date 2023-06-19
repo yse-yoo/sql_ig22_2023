@@ -57,8 +57,13 @@ VALUES ("D00002", "紅茶", 350, 100);
 INSERT INTO items (code, name, price, stock)
 VALUES ("D00003", "ほうじ茶", 400, 100);
 
+-- codeの重複(じゅうふく）はエラー *code が UNIQUEに設定
+INSERT INTO items (code, name, price, stock)
+VALUES ("D00001", "オレンジジュース", 400, 100);
 
 
+-- itemsテーブルの「id = 1」のレコードの「stock = 200」に更新
+UPDATE items SET stock = 200 WHERE id = 1;
 
 
 
