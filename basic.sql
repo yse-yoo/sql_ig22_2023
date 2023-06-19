@@ -39,3 +39,6 @@ SELECT * FROM users LIMIT 10;
 
 -- usersテーブルから、最後からの10レコード選択
 SELECT * FROM users ORDER BY id DESC LIMIT 10;
+
+-- usersテーブルから、11 - 20 のレコード選択
+SELECT * FROM users LIMIT 10 OFFSET 10;
