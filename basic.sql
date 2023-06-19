@@ -61,10 +61,23 @@ VALUES ("D00003", "ほうじ茶", 400, 100);
 INSERT INTO items (code, name, price, stock)
 VALUES ("D00001", "オレンジジュース", 400, 100);
 
-
 -- itemsテーブルの「id = 1」のレコードの「stock = 200」に更新
 UPDATE items SET stock = 200 WHERE id = 1;
 
+-- itemsテーブルの「id = 2」のレコードの「stock = 150」「updated_at」を現在の日時に更新
+UPDATE items 
+SET stock = 150, updated_at = now() 
+WHERE id = 2;
 
+-- itemsテーブルにレコードを追加
+INSERT INTO items (code, name, price, stock)
+VALUES ("D00004", "オレンジジュース", 400, 100);
 
+-- itemsテーブルから「id = D00004」のレコードを削除
+DELETE FROM items WHERE code = "D00004";
 
+-- itemsテーブルのレコード数（すう）を取得（しゅとく）
+SELECT COUNT(id) AS item_count FROM items;
+
+-- usersテーブルのレコード数（すう）を取得（しゅとく）
+SELECT COUNT(id) AS user_count FROM users;
