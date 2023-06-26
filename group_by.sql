@@ -179,3 +179,16 @@ FROM user_items
 JOIN items ON user_items.item_id = items.id
 WHERE items.id = 1
 GROUP BY item_id;
+
+-- 複数（ふくすう）のJOIN
+SELECT 
+    items.name AS item_name,
+    users.name AS user_name,
+    user_items.item_id,
+    user_items.user_id,
+    user_items.amount,
+    user_items.created_at
+FROM user_items
+JOIN items ON user_items.item_id = items.id
+JOIN users ON user_items.user_id = users.id
+
