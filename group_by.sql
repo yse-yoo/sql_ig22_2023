@@ -144,3 +144,16 @@ SELECT
     user_items.created_at
 FROM user_items
 RIGHT JOIN items ON user_items.item_id = items.id;
+
+
+-- 「user_items」をベースに「users」を INNER JOINして、「user_id」でGROUP BY
+SELECT 
+    user_items.user_id,
+    users.name,
+    COUNT(user_items.id) AS order_count,
+    SUM(user_items.amount) AS order_amount,
+    SUM(user_items.total_price) AS total_price
+FROM user_items
+JOIN users ON user_items.user_id = users.id
+GROUP BY user_id;
+
