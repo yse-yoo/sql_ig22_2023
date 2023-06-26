@@ -167,3 +167,15 @@ SELECT
 FROM user_items
 JOIN items ON user_items.item_id = items.id
 GROUP BY item_id;
+
+-- 「user_items」をベースに「items」を INNER JOINして、「item_id」でGROUP BYして、「items.id = 1」だけ集計
+SELECT 
+    user_items.item_id,
+    items.name,
+    COUNT(user_items.id) AS order_count,
+    SUM(user_items.amount) AS order_amount,
+    SUM(user_items.total_price) AS total_price
+FROM user_items
+JOIN items ON user_items.item_id = items.id
+WHERE items.id = 1
+GROUP BY item_id;
