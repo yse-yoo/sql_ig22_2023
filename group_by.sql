@@ -184,6 +184,7 @@ GROUP BY item_id;
 SELECT 
     items.name AS item_name,
     users.name AS user_name,
+    users.email,
     user_items.item_id,
     user_items.user_id,
     user_items.amount,
