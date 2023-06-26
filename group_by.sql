@@ -85,6 +85,7 @@ JOIN user_items ON user_items.item_id = items.id;
 
 -- OUTER JOIN
 -- LEFT JOIN
+-- 「users」（LEFT）に「user_items」（RIGHT）が、LEFTで結合
 SELECT 
     users.id,
     users.name,
@@ -93,3 +94,13 @@ SELECT
     user_items.created_at
 FROM users
 LEFT JOIN user_items ON user_items.user_id = users.id;
+
+-- 「user_items」（LEFT）に「users」（RIGHT）が、LEFTで結合
+SELECT 
+    users.id,
+    users.name,
+    user_items.user_id,
+    user_items.item_id,
+    user_items.created_at
+FROM user_items
+LEFT JOIN users ON user_items.user_id = users.id;
