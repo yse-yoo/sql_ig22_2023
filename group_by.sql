@@ -216,4 +216,6 @@ SELECT
 FROM user_items
 JOIN users ON user_items.user_id = users.id
 GROUP BY user_items.user_id
-HAVING SUM(user_items.total_price) >= 1000;
+HAVING SUM(user_items.total_price) >= 1000
+ORDER BY total_price
+LIMIT 10;
