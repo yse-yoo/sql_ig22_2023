@@ -104,3 +104,23 @@ SELECT
     user_items.created_at
 FROM user_items
 LEFT JOIN users ON user_items.user_id = users.id;
+
+-- 「items」（LEFT）に「user_items」（RIGHT）が、LEFTで結合
+SELECT 
+    items.id,
+    items.name,
+    user_items.user_id,
+    user_items.amount,
+    user_items.created_at
+FROM items
+LEFT JOIN user_items ON user_items.item_id = items.id;
+
+-- 「user_items」（LEFT）に「items」（RIGHT）が、LEFTで結合
+SELECT 
+    items.id,
+    items.name,
+    user_items.user_id,
+    user_items.amount,
+    user_items.created_at
+FROM user_items
+LEFT JOIN items ON user_items.item_id = items.id;
