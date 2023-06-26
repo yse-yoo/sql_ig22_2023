@@ -20,3 +20,14 @@ SELECT
     SUM(total_price) AS total_price
 FROM user_items
 GROUP BY user_id;
+
+-- item_idでグループ
+SELECT 
+    item_id,
+    COUNT(item_id) AS item_count,
+    SUM(amount) AS item_amount,
+    SUM(total_price) AS total_price
+FROM user_items
+GROUP BY item_id;
+
+
