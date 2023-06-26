@@ -204,3 +204,16 @@ SELECT
 FROM user_items
 JOIN users ON user_items.user_id = users.id
 GROUP BY user_items.user_id;
+
+-- 「user_items」をベースに「users」を INNER JOINして、「user_id」でGROUP BYし、
+-- 総合計金額（そうごうけいきんがく）が1000以上
+SELECT 
+    user_items.user_id,
+    users.name,
+    COUNT(user_items.id) AS order_count,
+    SUM(user_items.amount) AS order_amount,
+    SUM(user_items.total_price) AS total_price
+FROM user_items
+JOIN users ON user_items.user_id = users.id
+GROUP BY user_items.user_id
+HAVING SUM(user_items.total_price) >= 1000;
