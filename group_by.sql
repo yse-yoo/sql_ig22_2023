@@ -67,6 +67,7 @@ SELECT
     items.name,
     user_items.user_id,
     user_items.item_id,
+    user_items.amount,
     user_items.created_at
 FROM user_items
 JOIN items ON user_items.item_id = items.id;
