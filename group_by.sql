@@ -81,3 +81,15 @@ SELECT
     user_items.created_at
 FROM items
 JOIN user_items ON user_items.item_id = items.id;
+
+
+-- OUTER JOIN
+-- LEFT JOIN
+SELECT 
+    users.id,
+    users.name,
+    user_items.user_id,
+    user_items.item_id,
+    user_items.created_at
+FROM users
+LEFT JOIN user_items ON user_items.user_id = users.id;
