@@ -50,3 +50,14 @@ SELECT
     user_items.created_at
 FROM user_items
 JOIN users ON user_items.user_id = users.id;
+
+-- 「users」に「user_items」を内部結合（INNER JOIN）
+SELECT 
+    users.id,
+    users.name,
+    user_items.user_id,
+    user_items.item_id,
+    user_items.created_at
+FROM users
+JOIN user_items ON user_items.user_id = users.id;
+
