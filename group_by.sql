@@ -157,3 +157,13 @@ FROM user_items
 JOIN users ON user_items.user_id = users.id
 GROUP BY user_id;
 
+-- 「user_items」をベースに「items」を INNER JOINして、「item_id」でGROUP BY
+SELECT 
+    user_items.item_id,
+    items.name,
+    COUNT(user_items.id) AS order_count,
+    SUM(user_items.amount) AS order_amount,
+    SUM(user_items.total_price) AS total_price
+FROM user_items
+JOIN items ON user_items.item_id = items.id
+GROUP BY item_id;
